@@ -334,7 +334,7 @@ class Basestation {
   setDataFromUI(item) {
     const THAT = this;
     const WEB_SOCKET = THAT.web_socket;
-    THAT.setRefboxStatus(item.connect_refbox);
+    console.log(item);
     WEB_SOCKET.setDataFromUI(item);
   }
 
