@@ -50,9 +50,23 @@ export default {
 
 <template>
   <div>
-    <h1>PWEB Belom kelar</h1>
-    <p>{{ ROBOT_STATE }}</p>
-    <div>
+    <h1>DATA ROBOTS</h1>
+    <h2>Robot 1</h2>
+    <p>{{ ROBOT_STATE.robot[0].self_data }}</p>
+    <p>{{ ROBOT_STATE.robot[0].pc2bs_data }}</p>
+    <h2>Robot 2</h2>
+    <p>{{ ROBOT_STATE.robot[1].self_data }}</p>
+    <p>{{ ROBOT_STATE.robot[1].pc2bs_data }}</p>
+    <h2>Robot 3</h2>
+    <p>{{ ROBOT_STATE.robot[2].self_data }}</p>
+    <p>{{ ROBOT_STATE.robot[2].pc2bs_data }}</p>
+    <h2>Robot 4</h2>
+    <p>{{ ROBOT_STATE.robot[3].self_data }}</p>
+    <p>{{ ROBOT_STATE.robot[3].pc2bs_data }}</p>
+    <h2>Robot 5</h2>
+    <p>{{ ROBOT_STATE.robot[4].self_data }}</p>
+    <p>{{ ROBOT_STATE.robot[4].pc2bs_data }}</p>
+    <div class="container-button">
       <button @click="setCommand('A')">A</button>
       <button @click="setCommand('D')">D</button>
       <button @click="setCommand('E')">E</button>
@@ -61,4 +75,16 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container-button {
+  margin-top: 20px;
+  display: flex;
+  gap: 5rem;
+  justify-content: space-around;
+}
+
+button {
+  width: 80px;
+  height: 80px;
+}
+</style>
