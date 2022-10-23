@@ -1,0 +1,6 @@
+{
+  "group_multicast": "224.16.32.80",
+  "port_udp_multicast": 1026,
+  "port_web_socket": 9090,
+  "is_multicast": true
+}
