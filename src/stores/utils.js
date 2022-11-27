@@ -1,19 +1,55 @@
+import Config from "@/config/setup.json";
+
+export const GLOBAL_DATA_UI = {
+  header_manual: false,
+  auto_kalibrasi: false,
+  command: 83,
+  style: 65,
+  connect_refbox: false,
+  n_robot_manual: 0,
+  // n robot manual
+  target_manual_x: 0, // add identifier at the last digit
+  target_manual_y: 0, // add identifier at the last digit
+  target_manual_theta: 0, // add identifier at the last digit
+  // n robot offset
+  odometry_offset_robot_x: 0, // add identifier at the last digit
+  odometry_offset_robot_y: 0, // add identifier at the last digit
+  odometry_offset_robot_theta: 0, // add identifier at the last digit
+  trim_kecepatan_robot: [25, 25, 25, 25, 25],
+  trim_kecepatan_sudut_robot: [10, 10, 10, 10, 10],
+  trim_penendang_robot: [2, 2, 2, 2, 2],
+  status_control_robot: [0, 0, 0, 0, 0],
+  is_multicast: Config.is_multicast,
+};
+
 export const GLOBAL_DATA_SERVER = {
   bola_x_pada_lapangan: 112,
   bola_y_pada_lapangan: 225,
+  // MUX GLOBAL
+  n_robot_umpan: 2,
+  n_robot_terima: 1,
   n_robot_aktif: 3,
   n_robot_dekat_bola: 1,
   n_robot_dapat_bola: 4,
+  // ROLE
+  n_attacker_left: 1,
+  n_attacker_right: 2,
+  n_defender_left: 3,
+  n_defender_right: 4,
+  // MUX
   mux1: 0,
-};
-
-export const GLOBAL_DATA_UI = {
-  command: 83,
+  mux2: 0,
+  mux_role: 0,
+  mux_n_robot_closer: 0,
+  mux_bs_control_robot: 0,
+  // REFBOX
+  refbox: { status: false, message: {} },
 };
 
 export const SELF_ALONE_DATA_ROBOT = {
   is_active: false,
-  ip: "",
+  n_robot_teman: 1,
+  role: 1,
 };
 
 export const PC2BS_DATA_ROBOT = {
@@ -24,13 +60,22 @@ export const PC2BS_DATA_ROBOT = {
   status_bola: 0,
   bola_x: 9999,
   bola_y: 9999,
+  robot_condition: 9999,
+  target_umpan: 0,
+  status_algoritma: 9999,
+  status_sub_algoritma: 9999,
+  status_sub_sub_algoritma: 9999,
+  status_sub_sub_sub_algoritma: 9999,
+  obs_x: [9999, 9999, 9999, 9999, 9999],
+  obs_y: [9999, 9999, 9999, 9999, 9999],
 };
 
-export const BS2PC_DATA_ROBOT = {
-  command: 83,
-  bola_x_pada_lapangan: 0,
-  bola_y_pada_lapangan: 0,
-  mux1: 0,
+export const REFBOX = {
+  status: false,
+  message: {
+    command: "",
+    targetTeam: "",
+  },
 };
 
 export const COMMAND_ROBOT = {
@@ -67,12 +112,12 @@ export const COMMAND_ROBOT = {
   S: {
     text: "stop",
     scope: "all",
-    init: "S",
+    init: "~",
   },
   s: {
     text: "start",
     scope: "all",
-    init: "S",
+    init: "~",
   },
   N: {
     text: "drop ball",
@@ -125,9 +170,3 @@ export const COMMAND_ROBOT = {
     init: "S",
   },
 };
-
-// INTERVAL SERVER UPDATE DATA IN MS
-export const TIMER_SERVER_UPDATE_DATA_MS = 25;
-
-// BS TO PC IN MS
-export const TIMER_BS_TO_PC_MS = 50;

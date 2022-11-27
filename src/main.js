@@ -1,14 +1,12 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-
 import App from "./App.vue";
 import router from "./router";
+import { loadFonts } from "./plugins/webfontloader";
+import VueKonva from "vue-konva";
+import "@/style.css";
+import "flowbite";
 
-import "./assets/main.css";
+loadFonts();
 
-const app = createApp(App);
-
-app.use(createPinia());
-app.use(router);
-
-app.mount("#app");
+createApp(App).use(VueKonva).use(createPinia()).use(router).mount("#app");

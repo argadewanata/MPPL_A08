@@ -14,14 +14,23 @@ class Robot {
     ...PC2BS_DATA_ROBOT,
   };
 
-  constructor(ip) {
+  constructor(role, ip) {
     const THAT = this;
+    THAT.self_data.role = role;
     THAT.self_data.ip = ip;
   }
 
   setisActive(is_active) {
     const THAT = this;
     THAT.self_data.is_active = is_active;
+  }
+  setNRobotTeman(n_robot_teman) {
+    const THAT = this;
+    THAT.self_data.n_robot_teman = n_robot_teman;
+  }
+  setRole(role) {
+    const THAT = this;
+    THAT.self_data.role = role;
   }
   setPc2bsData(pc2bs_data) {
     const THAT = this;
