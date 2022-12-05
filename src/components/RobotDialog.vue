@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col justify-center">
     <div class="card">
       <div>
         <h5>
@@ -180,45 +180,7 @@
             {{ item.pc2bs_data.status_algoritma }}
           </td>
         </tr>
-        <tr class="hover:bg-slate-100">
-          <td style="font-size: 10px" class="px-4 text-left">Sub Algo</td>
-          <td
-            style="font-size: 10px"
-            v-for="(item, index) in ROBOT_STATE.robot"
-            :key="index"
-          >
-            {{ item.pc2bs_data.status_sub_algoritma }}
-          </td>
-        </tr>
-        <tr class="hover:bg-slate-100">
-          <td style="font-size: 10px" class="px-4 text-left">Sub^ Algo</td>
-          <td
-            style="font-size: 10px"
-            v-for="(item, index) in ROBOT_STATE.robot"
-            :key="index"
-          >
-            {{ item.pc2bs_data.status_sub_sub_algoritma }}
-          </td>
-        </tr>
-        <tr class="hover:bg-slate-100">
-          <td style="font-size: 10px" class="px-4 text-left">Sub^^ Algo</td>
-          <td
-            style="font-size: 10px"
-            v-for="(item, index) in ROBOT_STATE.robot"
-            :key="index"
-          >
-            {{ item.pc2bs_data.status_sub_sub_sub_algoritma }}
-          </td>
-        </tr>
-        <tr class="hover:bg-slate-100">
-          <td style="font-size: 10px" class="px-4 text-left">Error PC</td>
-        </tr>
-        <tr class="hover:bg-slate-100">
-          <td style="font-size: 10px" class="px-4 text-left">Error STM</td>
-        </tr>
-        <tr class="hover:bg-slate-100">
-          <td style="font-size: 10px" class="px-4 text-left">Timeout Error</td>
-        </tr>
+
         <tr>
           <td
             style="font-size: 15px"

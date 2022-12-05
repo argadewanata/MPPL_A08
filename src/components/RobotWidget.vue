@@ -44,10 +44,10 @@
         </div>
       </div>
       <!-- SLIDER -->
-      <!-- <div
+      <div
         class="w-fit max-w-sm rounded-lg border border-gray-200 bg-white p-4"
       >
-        VELOCITY
+        <!-- VELOCITY -->
         <div class="flex items-center">
           <label
             for="velocity-range"
@@ -70,7 +70,7 @@
             v-model="ROBOT_STATE.ui_to_server.trim_kecepatan_robot[robot_order]"
           />
         </div>
-        SUDUT
+        <!-- SUDUT -->
         <div class="flex items-stretch justify-items-center">
           <label
             for="sudut-range"
@@ -97,7 +97,7 @@
             "
           />
         </div>
-        SHOOT
+        <!-- SHOOT -->
         <div class="flex items-stretch justify-items-center">
           <label
             for="shoot-range"
@@ -120,7 +120,7 @@
             v-model="ROBOT_STATE.ui_to_server.trim_penendang_robot[robot_order]"
           />
         </div>
-      </div> -->
+      </div>
       <!-- TABLE -->
       <div class="relative overflow-x-auto" v-if="show">
         <table

@@ -152,7 +152,7 @@
     </div>
     <router-view />
 
-    <br />
+    <!-- <br />
     <h2>Robot 1</h2>
     <p>{{ ROBOT_STATE.robot[0] }}</p>
     <h2>Robot 2</h2>
@@ -168,7 +168,7 @@
     <h2>GLOBAL DATA FROM UI</h2>
     <p>{{ ROBOT_STATE.ui_to_server }}</p>
     <h2>GENERAL DATA</h2>
-    <p>{{ ROBOT_STATE.robot }}</p>
+    <p>{{ ROBOT_STATE.robot }}</p> -->
   </div>
 </template>
 

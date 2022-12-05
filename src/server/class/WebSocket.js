@@ -1,5 +1,6 @@
 const { GLOBAL_DATA_UI } = require("../utils/init_data");
 const Config = require("../../config/setup.json");
+const { request } = require("https");
 
 class WebSocket {
   socket;
@@ -17,11 +18,13 @@ class WebSocket {
     const HTTP = require("http");
     const SERVER = HTTP.createServer(APP);
     const { Server } = require("socket.io");
+    const OS = require("os");
     THAT.socket = new Server(SERVER, {
       cors: {
-        origins: ["http://localhost:5173"],
+        origins: ["*"],
       },
     });
+    // origins: ["http://localhost:5173", "http://" + OS.hostname() + ":5173"],
     SERVER.listen(THAT.port, () => {
       console.log(`listening on port socket: ${THAT.port}`);
     });
