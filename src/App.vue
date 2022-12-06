@@ -11,18 +11,26 @@
         IRIS Basestation
       </div>
       <div class="flex flex-col">
-        <div class="cursor-pointer py-2 pl-6 hover:bg-slate-200">Regional</div>
-        <div class="cursor-pointer py-2 pl-6 hover:bg-slate-200">Nasional</div>
-        <div class="cursor-pointer py-2 pl-6 hover:bg-slate-200">Robocup</div>
+        <router-link to="/regional">
+          <div class="cursor-pointer py-2 pl-6 hover:bg-slate-200">
+            Regional
+          </div>
+        </router-link>
+        <router-link to="/">
+          <div class="cursor-pointer py-2 pl-6 hover:bg-slate-200">
+            Nasional
+          </div>
+        </router-link>
       </div>
-      <div class="pl-3">
+      <!-- <div class="pl-3">
         <button
           type="button"
           class="my-3 rounded-lg border border-gray-200 bg-blue-600 py-2.5 px-14 text-lg font-medium text-white hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-200"
         >
           Status Control Robot
         </button>
-      </div>
+      </div> -->
+      <hr />
       <!-- for toogle -->
       <div class="mt-1 pl-3">
         <div>
@@ -151,24 +159,6 @@
       />
     </div>
     <router-view />
-
-    <!-- <br />
-    <h2>Robot 1</h2>
-    <p>{{ ROBOT_STATE.robot[0] }}</p>
-    <h2>Robot 2</h2>
-    <p>{{ ROBOT_STATE.robot[1] }}</p>
-    <h2>Robot 3</h2>
-    <p>{{ ROBOT_STATE.robot[2] }}</p>
-    <h2>Robot 4</h2>
-    <p>{{ ROBOT_STATE.robot[3] }}</p>
-    <h2>Robot 5</h2>
-    <p>{{ ROBOT_STATE.robot[4] }}</p>
-    <h2>GLOBAL DATA SERVER</h2>
-    <p>{{ ROBOT_STATE.global_data_server }}</p>
-    <h2>GLOBAL DATA FROM UI</h2>
-    <p>{{ ROBOT_STATE.ui_to_server }}</p>
-    <h2>GENERAL DATA</h2>
-    <p>{{ ROBOT_STATE.robot }}</p> -->
   </div>
 </template>
 
@@ -226,7 +216,7 @@ export default {
       if (refbox.status && !overrid_mode) {
         let translattorCommand = THAT.translateCommand(command);
         if (translattorCommand) {
-          if (target == Config.group_multicast) {
+          if (target == Config.group_multicast || target == "") {
             THAT.ROBOT_STATE.setCommand(translattorCommand);
           } else {
             THAT.ROBOT_STATE.setCommand(translattorCommand.toLowerCase());
